@@ -1,0 +1,8 @@
+## Interface: 11303
+## Title: Sleek UI
+## Version: 0.0.1-alpha
+## Author: Thuvias (Kyle Scott)
+## Notes: A sleek UI for WoW classic.
+## DefaultState: enabled
+
+SleekUI.lua
