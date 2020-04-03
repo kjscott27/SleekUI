@@ -46,14 +46,23 @@ end
 --]]
 
 ---------------------
--- Actual Addon 
+-- Name printing test code
 
-print('Hello ' .. UnitName('player') .. ' Level:  ' .. UnitLevel('player'));
+print('Hello ' .. UnitName('player'));
+print('Class: ' .. UnitClass('player'));
+print('Level: ' .. UnitLevel('player'));
+---------------------
+-- Actual Addon 
 
 local ParentFrame = CreateFrame('Frame', 'SleekParentFrame', UIParent, 'BasicFrameTemplateWithInset');
 
 ParentFrame:SetSize(300, 360); -- width, height
 ParentFrame:SetPoint('center', UIParent, 'center');
+
+ParentFrame.title = ParentFrame:CreateFontString(nil, 'overlay');
+ParentFrame.title:SetFontObject('GameFontHighlight');
+ParentFrame.title:SetPoint('left', ParentFrame.TitleBg, 'left', 5, 0);
+ParentFrame.title:SetText('SleekUI Buff Options');
 
 
 
