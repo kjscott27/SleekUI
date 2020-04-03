@@ -60,7 +60,7 @@ local ParentFrame = CreateFrame('Frame', 'SleekParentFrame', UIParent, 'BasicFra
 
 
 -- set the size and where it will anchor on the screen
-ParentFrame:SetSize(300, 360); -- width, height
+ParentFrame:SetSize(260, 400); -- width, height
 ParentFrame:SetPoint('center');
 
 -- set the text and text style for the title of the frame
