@@ -55,7 +55,7 @@ print('Level: ' .. UnitLevel('player'));
 -- Actual Addon 
 
 
--- set parent frame
+-- create & set parent frame
 local ParentFrame = CreateFrame('Frame', 'SleekParentFrame', UIParent, 'BasicFrameTemplateWithInset');
 
 
@@ -68,7 +68,7 @@ ParentFrame.title = ParentFrame:CreateFontString(nil, 'overlay', 'GameFontHighli
 ParentFrame.title:SetPoint('left', ParentFrame.TitleBg, 'left', 5, 0);
 ParentFrame.title:SetText('SleekUI Buff Options');
 
--- assign some buttons
+-- create some buttons
 ---- * Save Button
 ParentFrame.saveButton = CreateFrame('Button', nil, ParentFrame, 'GameMenuButtonTemplate');
 ParentFrame.saveButton:SetPoint('center', ParentFrame, 'top', 0, -70);
@@ -93,7 +93,7 @@ ParentFrame.loadButton:SetText('Cancel');
 ParentFrame.loadButton:SetNormalFontObject('GameFontHighlight');
 ParentFrame.loadButton:SetHighlightFontObject('GameFontHighlightLarge');
 
--- assign some sliders
+-- create some sliders
 ---- * Slider 1
 ParentFrame.sliderOne = CreateFrame('Slider', nil, ParentFrame, 'OptionsSliderTemplate');
 ParentFrame.sliderOne:SetPoint('top', ParentFrame.loadButton, 'bottom', 0, -20);
@@ -110,6 +110,16 @@ ParentFrame.sliderTwo:SetValue(40);
 ParentFrame.sliderTwo:SetValueStep(1);
 ParentFrame.sliderTwo:SetObeyStepOnDrag(true);
 
+-- create some checkboxes 
+---- * Checkbox 1
+ParentFrame.checkboxOne = CreateFrame('CheckButton', nil, ParentFrame, 'UICheckButtonTemplate');
+ParentFrame.checkboxOne:SetPoint('topLeft', ParentFrame.sliderTwo, 'bottomLeft', -10, -40);
+ParentFrame.checkboxOne.text:SetText('Some Check Button');
+
+---- * Checkbox 2
+ParentFrame.checkboxTwo = CreateFrame('CheckButton', nil, ParentFrame, 'UICheckButtonTemplate');
+ParentFrame.checkboxTwo:SetPoint('topLeft', ParentFrame.checkboxOne, 'bottomLeft', 0, -10);
+ParentFrame.checkboxTwo.text:SetText('Some Check Button');
 
 
 
@@ -121,5 +131,3 @@ ParentFrame.sliderTwo:SetObeyStepOnDrag(true);
 
 
 
-
----- * Slider 2
