@@ -54,17 +54,41 @@ print('Level: ' .. UnitLevel('player'));
 ---------------------
 -- Actual Addon 
 
+
+-- set parent frame
 local ParentFrame = CreateFrame('Frame', 'SleekParentFrame', UIParent, 'BasicFrameTemplateWithInset');
 
-ParentFrame:SetSize(300, 360); -- width, height
-ParentFrame:SetPoint('center', UIParent, 'center');
 
-ParentFrame.title = ParentFrame:CreateFontString(nil, 'overlay');
-ParentFrame.title:SetFontObject('GameFontHighlight');
+-- set the size and where it will anchor on the screen
+ParentFrame:SetSize(300, 360); -- width, height
+ParentFrame:SetPoint('center');
+
+-- set the text and text style for the title of the frame
+ParentFrame.title = ParentFrame:CreateFontString(nil, 'overlay', 'GameFontHighlight');
 ParentFrame.title:SetPoint('left', ParentFrame.TitleBg, 'left', 5, 0);
 ParentFrame.title:SetText('SleekUI Buff Options');
 
+-- assign some buttons
+---- * Save Button
+ParentFrame.saveButton = CreateFrame('Button', nil, ParentFrame, 'GameMenuButtonTemplate');
+ParentFrame.saveButton:SetPoint('center', ParentFrame, 'top', 0, -70);
+ParentFrame.saveButton:SetSize(140, 40);
+ParentFrame.saveButton:SetText('Save');
+ParentFrame.saveButton:SetNormalFontObject('GameFontHighlight');
+ParentFrame.saveButton:SetHighlightFontObject('GameFontHighlightLarge');
 
+---- * Reset Button
+ParentFrame.resetButton = CreateFrame('Button', nil, ParentFrame, 'GameMenuButtonTemplate')
+ParentFrame.resetButton:SetPoint('top', ParentFrame.saveButton, 'bottom', 0, -10);
+ParentFrame.resetButton:SetSize(140, 40);
+ParentFrame.resetButton:SetText('Reset');
+ParentFrame.resetButton:SetNormalFontObject('GameFontHighlight');
+ParentFrame.resetButton:SetHighlightFontObject('GameFontHighlightLarge');
 
-
-
+---- * Cancel Button
+ParentFrame.loadButton = CreateFrame('Button', nil, ParentFrame, 'GameMenuButtonTemplate')
+ParentFrame.loadButton:SetPoint('top', ParentFrame.resetBtn, 'bottom', 0, -10);
+ParentFrame.loadButton:SetSize(140, 40);
+ParentFrame.loadButton:SetText('Cancel');
+ParentFrame.loadButton:SetNormalFontObject('GameFontHighlight');
+ParentFrame.loadButton:SetHighlightFontObject('GameFontHighlightLarge');
