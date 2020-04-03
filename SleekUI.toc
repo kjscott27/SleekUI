@@ -4,5 +4,8 @@
 ## Author: Thuvias (Kyle Scott)
 ## Notes: A sleek UI for WoW classic.
 ## DefaultState: enabled
+## SavedVariables: SleekUIDB
 
-SleekUI.lua
+config.lua
+timer.lua
+init.lua
