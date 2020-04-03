@@ -87,8 +87,39 @@ ParentFrame.resetButton:SetHighlightFontObject('GameFontHighlightLarge');
 
 ---- * Cancel Button
 ParentFrame.loadButton = CreateFrame('Button', nil, ParentFrame, 'GameMenuButtonTemplate')
-ParentFrame.loadButton:SetPoint('top', ParentFrame.resetBtn, 'bottom', 0, -10);
+ParentFrame.loadButton:SetPoint('top', ParentFrame.resetButton, 'bottom', 0, -10);
 ParentFrame.loadButton:SetSize(140, 40);
 ParentFrame.loadButton:SetText('Cancel');
 ParentFrame.loadButton:SetNormalFontObject('GameFontHighlight');
 ParentFrame.loadButton:SetHighlightFontObject('GameFontHighlightLarge');
+
+-- assign some sliders
+---- * Slider 1
+ParentFrame.sliderOne = CreateFrame('Slider', nil, ParentFrame, 'OptionsSliderTemplate');
+ParentFrame.sliderOne:SetPoint('top', ParentFrame.loadButton, 'bottom', 0, -20);
+ParentFrame.sliderOne:SetMinMaxValues(1, 100);
+ParentFrame.sliderOne:SetValue(50);
+ParentFrame.sliderOne:SetValueStep(30);
+ParentFrame.sliderOne:SetObeyStepOnDrag(true);
+
+---- * Slider 2
+ParentFrame.sliderTwo = CreateFrame('Slider', nil, ParentFrame, 'OptionsSliderTemplate');
+ParentFrame.sliderTwo:SetPoint('top', ParentFrame.sliderOne, 'bottom', 0, -20);
+ParentFrame.sliderTwo:SetMinMaxValues(1, 100);
+ParentFrame.sliderTwo:SetValue(40);
+ParentFrame.sliderTwo:SetValueStep(1);
+ParentFrame.sliderTwo:SetObeyStepOnDrag(true);
+
+
+
+
+
+
+
+
+
+
+
+
+
+---- * Slider 2
